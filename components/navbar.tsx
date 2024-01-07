@@ -8,10 +8,12 @@ const Navbar = () => {
         <Image src={logo} alt="logo" width={150} />
       </div>
       <div>
-        <a href="/support" className="mr-4">
+        <a href="/support" className="mr-4 text-[#88D498]">
           Support Us
         </a>
-        <a href="/signup">Sign Up</a>
+        <a href="/signup" className="">
+          Sign Up
+        </a>
       </div>
     </nav>
   );
