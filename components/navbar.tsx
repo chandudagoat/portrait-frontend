@@ -16,7 +16,7 @@ const Navbar = () => {
         </a>
         <a
           href="/signup"
-          className="bg-[#88D498] font-bold px-10 py-5 rounded text-[#F3E9D2] hover:text-white hover:bg-[#1A936F] transition ease-in-out delay-150"
+          className="transition ease-in-out delay-150 bg-[#88D498] font-bold px-10 py-5 rounded text-white hover:text-[#F3E9D2] hover:bg-[#1A936F]"
         >
           Sign Up
         </a>
