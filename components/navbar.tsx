@@ -3,7 +3,7 @@ import logo from "@/app/portrait.png";
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex items-center justify-around py-8">
+    <nav className="w-full flex items-center justify-around py-8 my-8">
       <a href="/">
         <Image src={logo} alt="logo" width={150} />
       </a>
