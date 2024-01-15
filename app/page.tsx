@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Input } from "@/components/ui/input";
+import { FaAngleDown } from "react-icons/fa";
 
 export default function Home() {
   useGSAP(() => {
@@ -20,38 +21,36 @@ export default function Home() {
     gsap.to(".box1", {
       y: -30,
       duration: 1,
-      ease: "sine.inOut",
+      ease: "bounce",
     });
 
     gsap.to(".box2", {
       y: -30,
-      duration: 1,
-      ease: "sine.inOut",
+      duration: 1.5,
+      ease: "bounce",
     });
 
     gsap.to(".box3", {
       y: -30,
-      duration: 1,
-      ease: "sine.inOut",
+      duration: 2,
+      ease: "bounce",
     });
 
     gsap.to(".box4", {
       y: -90,
       duration: 1,
-      ease: "sine.inOut",
+      ease: "bounce",
     });
 
-    gsap.effects.fade(".box1", { duration: 1 });
-    gsap.effects.fade(".box2", { duration: 1.5 });
-    gsap.effects.fade(".box3", { duration: 2 });
-    gsap.effects.fade(".box4", { duration: 5 });
+    gsap.to(".text", { y: -120, duration: 1.5, ease: "bounce" });
+    gsap.to(".claim", { y: -110, duration: 2, ease: "bounce" });
   });
   return (
     <div className="bg-[#F3E9D2]">
       <Navbar />
 
-      <div className="w-full h-1/2 flex items-center justify-around bg-white">
-        <div className="w-1/3 flex flex-col">
+      <div className="w-full h-1/2 flex items-center justify-center">
+        <div className="w-1/3 flex flex-col ml-48">
           <div className="text mb-8">
             <h1 className="text-7xl text-[#114B57] mb-4">
               Link In{" "}
@@ -67,8 +66,8 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <form action="POST">
-            <div className="flex items-center ">
+          <form action="POST" className="claim">
+            <div className="flex items-center mb-6">
               <label className="text-xl font-bold mr-2 text-[#114B57]">
                 portrait.me/
               </label>
@@ -77,13 +76,23 @@ export default function Home() {
                 placeholder="hclanka"
               />
             </div>
+            <button
+              type="submit"
+              className="w-48 h-12 bg-[#88D498] rounded-md font-bold text-white transition ease-in-out delay-150 hover:text-[#F3E9D2] hover:bg-[#1A936F]"
+            >
+              Claim!
+            </button>
           </form>
+          <a href="/" className="why-us">
+            <span className="font-bold text-md text-[#114B57]">Why Us?</span>
+            <FaAngleDown className="text-[#114B57]" />
+          </a>
         </div>
-        <div className="inline-grid gap-4 grid-cols-2 p-24">
-          <div className="opacity-0 box1 w-48 h-64 bg-[#88D498] rounded-md"></div>
-          <div className="opacity-0 box3 w-48 h-48 bg-[#1A936F] rounded-md"></div>
-          <div className="opacity-0 box2 w-48 h-48 bg-[#1A936F] rounded-md"></div>
-          <div className="opacity-0 box4 w-48 h-64 bg-[#88D498] rounded-md"></div>
+        <div className="inline-grid gap-4 grid-cols-2 p-24 mr-28">
+          <div className="box1 w-48 h-64 bg-[#88D498] rounded-md"></div>
+          <div className="box3 w-48 h-48 bg-[#1A936F] rounded-md"></div>
+          <div className="box2 w-48 h-48 bg-[#1A936F] rounded-md"></div>
+          <div className="box4 w-48 h-64 bg-[#88D498] rounded-md"></div>
         </div>
       </div>
     </div>
