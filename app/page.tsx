@@ -44,6 +44,15 @@ export default function Home() {
 
     gsap.to(".text", { y: -120, duration: 1.5, ease: "bounce" });
     gsap.to(".claim", { y: -110, duration: 2, ease: "bounce" });
+
+    gsap.to(".why-us", { y: -70, duration: 3, ease: "bounce" });
+
+    var down_tween = gsap.to(".down", {
+      y: 10,
+      duration: 1.5,
+      ease: "sine.inOut",
+    });
+    down_tween.yoyo(true).repeat(1000);
   });
   return (
     <div className="bg-[#F3E9D2]">
@@ -67,7 +76,7 @@ export default function Home() {
             </div>
           </div>
           <form action="POST" className="claim">
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-8">
               <label className="text-xl font-bold mr-2 text-[#114B57]">
                 portrait.me/
               </label>
@@ -85,7 +94,7 @@ export default function Home() {
           </form>
           <a href="/" className="why-us">
             <span className="font-bold text-md text-[#114B57]">Why Us?</span>
-            <FaAngleDown className="text-[#114B57]" />
+            <FaAngleDown className="down text-[#114B57]" />
           </a>
         </div>
         <div className="inline-grid gap-4 grid-cols-2 p-24 mr-28">
