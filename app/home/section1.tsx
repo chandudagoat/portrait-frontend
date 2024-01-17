@@ -3,36 +3,14 @@ import { Input } from "@/components/ui/input";
 import { FaAngleDown } from "react-icons/fa";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { motion } from "framer-motion";
 
 export default function Section1() {
   useGSAP(() => {
-    gsap.registerEffect({
-      name: "fade",
-      effect: (target: string, config: any) => {
-        return gsap.to(target, { duration: config.duration, opacity: 1 });
-      },
-      defaults: {
-        duration: 2,
-      },
-      extendTimeline: true,
-    });
+    gsap.to(".text", { y: -200, duration: 1.5, ease: "bounce" });
+    gsap.to(".claim", { y: -180, duration: 2, ease: "bounce" });
 
-    gsap.to(".box", {
-      y: -30,
-      duration: 1,
-      ease: "bounce",
-    });
-
-    gsap.to(".box_lower", {
-      y: -125,
-      duration: 1,
-      ease: "bounce",
-    });
-
-    gsap.to(".text", { y: -120, duration: 1.5, ease: "bounce" });
-    gsap.to(".claim", { y: -110, duration: 2, ease: "bounce" });
-
-    gsap.to(".why-us", { y: -70, duration: 3, ease: "bounce" });
+    gsap.to(".why-us", { y: -120, duration: 3, ease: "bounce" });
 
     var down_tween = gsap.to(".down", {
       y: 10,
@@ -44,7 +22,7 @@ export default function Section1() {
 
   return (
     <div className="w-full h-1/2 flex items-center justify-center">
-      <div className="w-1/3 flex flex-col">
+      <div className="w-1/3 flex flex-col ml-16">
         <div className="text mb-8">
           <h1 className="text-7xl text-[#114B57] mb-4">
             Link In{" "}
@@ -83,12 +61,78 @@ export default function Section1() {
         </a>
       </div>
       <div className="inline-grid gap-4 grid-cols-3 p-24">
-        <div className="box w-48 h-72 bg-[#88D498] rounded-md"></div>
-        <div className="box w-48 h-48 bg-[#1A936F] rounded-md"></div>
-        <div className="box w-48 h-72 bg-[#88D498] rounded-md"></div>
-        <div className="box w-48 h-48 bg-[#1A936F] rounded-md"></div>
-        <div className="box_lower w-48 h-72 bg-[#88D498] rounded-md"></div>
-        <div className="box w-48 h-48 bg-[#1A936F] rounded-md"></div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.1,
+          }}
+          whileHover={{ y: -10 }}
+          className="w-48 h-96 bg-[#88D498] rounded-md"
+        ></motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.2,
+          }}
+          whileHover={{ y: -10 }}
+          className="w-48 h-48 bg-[#1A936F] rounded-md"
+        ></motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.3,
+          }}
+          whileHover={{ y: -10 }}
+          className="w-48 h-96 bg-[#88D498] rounded-md"
+        ></motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.4,
+          }}
+          whileHover={{ y: -10 }}
+          className="w-48 h-48 bg-[#1A936F] rounded-md"
+        ></motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, y: -190 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.5,
+          }}
+          whileHover={{ y: -200 }}
+          className="w-48 h-96 bg-[#88D498] rounded-md"
+        ></motion.div>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            delay: 0.6,
+          }}
+          whileHover={{ y: -10 }}
+          className="w-48 h-48 bg-[#1A936F] rounded-md"
+        ></motion.div>
       </div>
     </div>
   );
