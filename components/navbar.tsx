@@ -1,12 +1,15 @@
 import Image from "next/image";
 import logo from "@/app/portrait.png";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex items-center justify-around py-8 my-8">
-      <a href="/">
-        <Image src={logo} alt="logo" width={150} />
-      </a>
+    <nav className="w-full flex items-center justify-around pt-12 mb-4">
+      <motion.div whileHover={{ y: -10 }}>
+        <a href="/">
+          <Image src={logo} alt="logo" width={150} />
+        </a>
+      </motion.div>
       <div>
         <a
           href="/support"

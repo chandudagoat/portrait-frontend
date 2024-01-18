@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 export default function Section1() {
   useGSAP(() => {
-    gsap.to(".text", { y: -200, duration: 1.5, ease: "bounce" });
-    gsap.to(".claim", { y: -180, duration: 2, ease: "bounce" });
+    gsap.to(".text", { y: -200, duration: 1.5, ease: "sine.inOut" });
+    gsap.to(".claim", { y: -180, duration: 2, ease: "sine.inOut" });
 
-    gsap.to(".why-us", { y: -120, duration: 3, ease: "bounce" });
+    gsap.to(".why-us", { y: -120, duration: 3, ease: "sine.inOut" });
 
     var down_tween = gsap.to(".down", {
       y: 10,
@@ -41,11 +41,11 @@ export default function Section1() {
         <form action="POST" className="claim">
           <div className="flex items-center mb-8">
             <label className="text-xl font-semibold mr-2 text-[#114B57]">
-              portrait.me
+              portrait.me/
             </label>
             <Input
               className="w-96 border-[#88D498] border-4 placeholder:font-semibold text-md"
-              placeholder="/hclanka"
+              placeholder="hclanka"
             />
           </div>
           <button
@@ -80,7 +80,7 @@ export default function Section1() {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.2,
+            delay: 0.15,
           }}
           whileHover={{ y: -10 }}
           className="w-48 h-48 bg-[#1A936F] rounded-md"
@@ -92,7 +92,7 @@ export default function Section1() {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.3,
+            delay: 0.2,
           }}
           whileHover={{ y: -10 }}
           className="w-48 h-96 bg-[#88D498] rounded-md"
@@ -104,7 +104,7 @@ export default function Section1() {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.4,
+            delay: 0.25,
           }}
           whileHover={{ y: -10 }}
           className="w-48 h-48 bg-[#1A936F] rounded-md"
@@ -116,7 +116,7 @@ export default function Section1() {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.5,
+            delay: 0.3,
           }}
           whileHover={{ y: -200 }}
           className="w-48 h-96 bg-[#88D498] rounded-md"
@@ -128,7 +128,7 @@ export default function Section1() {
             type: "spring",
             stiffness: 260,
             damping: 20,
-            delay: 0.6,
+            delay: 0.35,
           }}
           whileHover={{ y: -10 }}
           className="w-48 h-48 bg-[#1A936F] rounded-md"
