@@ -1,4 +1,3 @@
-// "use client";
 import { Input } from "@/components/ui/input";
 import { FaAngleDown } from "react-icons/fa";
 import { gsap } from "gsap";
@@ -8,10 +7,20 @@ import { FormEvent } from "react";
 
 export default function Section1() {
   useGSAP(() => {
-    gsap.to(".text", { y: -200, duration: 1.5, ease: "sine.inOut" });
-    gsap.to(".claim", { y: -180, duration: 2, ease: "sine.inOut" });
+    gsap.to(".text", {
+      y: -200,
+      opacity: 1,
+      duration: 1.5,
+      ease: "sine.inOut",
+    });
+    gsap.to(".claim", { y: -180, opacity: 1, duration: 2, ease: "sine.inOut" });
 
-    gsap.to(".why-us", { y: -120, duration: 3, ease: "sine.inOut" });
+    gsap.to(".why-us", {
+      y: -120,
+      opacity: 1,
+      duration: 3,
+      ease: "sine.inOut",
+    });
 
     var down_tween = gsap.to(".down", {
       y: 10,
@@ -31,7 +40,9 @@ export default function Section1() {
       .then((response) => response.text())
       .then(async function (response) {
         console.log(response);
+
         if (response != "null") {
+          alert("this username exists... sorry");
           console.log("this username is already being used");
         } else {
           await fetch("http://localhost:8000/profile/create", {
@@ -43,6 +54,7 @@ export default function Section1() {
             body: JSON.stringify({ username: username }),
           });
           console.log(`created user with username ${username}`);
+          alert(`created user with username ${username}`);
         }
       })
       .catch((err) => console.log(err));
@@ -51,7 +63,7 @@ export default function Section1() {
   return (
     <div className="w-full h-1/2 flex items-center justify-center">
       <div className="w-1/3 flex flex-col ml-16">
-        <div className="text mb-8">
+        <div className="text mb-8 opacity-0">
           <h1 className="text-7xl text-[#114B57] mb-4">
             Link In{" "}
             <span className="underline decoration-dotted transition ease-in-out delay-150 hover:decoration-dashed">
@@ -66,7 +78,7 @@ export default function Section1() {
             </span>
           </div>
         </div>
-        <form onSubmit={Submit} className="claim">
+        <form onSubmit={Submit} className="claim opacity-0">
           <div className="flex items-center mb-8">
             <label className="text-xl font-semibold mr-2 text-[#114B57]">
               portrait.me/
@@ -84,7 +96,7 @@ export default function Section1() {
             Claim!
           </button>
         </form>
-        <a href="/" className="why-us flex">
+        <a href="/" className="why-us flex opacity-0">
           <span className="font-bold text-md text-[#114B57]">Why Us?</span>
           <FaAngleDown className="down text-[#114B57]" />
         </a>
