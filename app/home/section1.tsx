@@ -1,9 +1,10 @@
-"use client";
+// "use client";
 import { Input } from "@/components/ui/input";
 import { FaAngleDown } from "react-icons/fa";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "framer-motion";
+import { FormEvent } from "react";
 
 export default function Section1() {
   useGSAP(() => {
@@ -19,6 +20,33 @@ export default function Section1() {
     });
     down_tween.yoyo(true).repeat(1000);
   });
+
+  async function Submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+
+    var username = formData.get("username");
+
+    await fetch(`http://localhost:8000/${username}`)
+      .then((response) => response.text())
+      .then(async function (response) {
+        console.log(response);
+        if (response != "null") {
+          console.log("this username is already being used");
+        } else {
+          await fetch("http://localhost:8000/profile/create", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username: username }),
+          });
+          console.log(`created user with username ${username}`);
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="w-full h-1/2 flex items-center justify-center">
@@ -38,12 +66,13 @@ export default function Section1() {
             </span>
           </div>
         </div>
-        <form action="POST" className="claim">
+        <form onSubmit={Submit} className="claim">
           <div className="flex items-center mb-8">
             <label className="text-xl font-semibold mr-2 text-[#114B57]">
               portrait.me/
             </label>
             <Input
+              name="username"
               className="w-96 border-[#88D498] border-4 placeholder:font-semibold text-md"
               placeholder="hclanka"
             />
