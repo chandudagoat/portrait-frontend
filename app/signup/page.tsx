@@ -73,7 +73,7 @@ const SignUp = () => {
     animate();
   }, []);
   return (
-    <div className="flex">
+    <div>
       <form action="POST">
         <Input type="email" placeholder="email" />
         <Input type="password" placeholder="password" />
