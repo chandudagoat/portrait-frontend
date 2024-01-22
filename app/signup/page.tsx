@@ -74,14 +74,26 @@ const SignUp = () => {
   }, []);
   return (
     <div>
-      <form action="POST">
-        <Input type="email" placeholder="email" />
-        <Input type="password" placeholder="password" />
-        <Button text="Sign Up"></Button>
+      <form action="POST" className="w-full bg-red-600 flex flex-col items-end">
+        <div className="w-1/2 flex items-center mb-4">
+          <div className="w-1/2 mr-2">
+            <label htmlFor="">Email</label>
+            <Input type="email" placeholder="email" className="w-full" />
+          </div>
+          <div className="w-1/2">
+            <label>Password</label>
+            <Input type="password" placeholder="password" className="w-full" />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="w-1/2 h-14 bg-[#88D498] rounded-md font-bold text-white transition ease-in-out delay-150 hover:text-[#F3E9D2] hover:bg-[#1A936F]"
+        >
+          Sign Up
+        </button>
       </form>
-      <div>
-        <canvas id="threed" />
-      </div>
+
+      <canvas id="threed" />
     </div>
   );
 };
