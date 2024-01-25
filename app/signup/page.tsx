@@ -8,8 +8,8 @@ import github from "@/app/github.png";
 
 const SignUp = () => {
   return (
-    <div className="flex items-center justify-around h-screen w-full">
-      <div className="w-1/3 mt-12">
+    <div className="flex flex-col items-center justify-around h-screen w-full">
+      <div className="flex w-2/3 mt-12">
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: -15 }}
@@ -21,9 +21,9 @@ const SignUp = () => {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="mb-8"
+          className="w-1/3"
         >
-          <Image src={youtube} alt="youtube" className="w-3/6 -rotate-12" />
+          <Image src={youtube} alt="youtube" className="w-5/6 -rotate-12" />
         </motion.div>
 
         <motion.div
@@ -38,13 +38,9 @@ const SignUp = () => {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="mb-8"
+          className="w-1/3"
         >
-          <Image
-            src={twitter}
-            alt="twitter"
-            className="ml-32 w-3/6 rotate-12"
-          />
+          <Image src={twitter} alt="twitter" className="w-5/6" />
         </motion.div>
 
         <motion.div
@@ -53,15 +49,15 @@ const SignUp = () => {
           transition={{
             type: "tween",
             duration: 3,
-            delay: 1,
+            delay: 2,
             stiffness: 260,
             damping: 20,
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="mb-8"
+          className="w-1/3"
         >
-          <Image src={github} alt="github" className="w-3/6 -rotate-12" />
+          <Image src={github} alt="github" className="w-5/6 rotate-12" />
         </motion.div>
       </div>
       <form
