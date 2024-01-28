@@ -8,8 +8,8 @@ import github from "@/app/github.png";
 
 const SignUp = () => {
   return (
-    <div className="flex flex-col items-center justify-around h-screen w-full">
-      <div className="flex w-2/3 mt-12">
+    <div className="flex h-screen w-full flex-col items-center justify-around">
+      <div className="mt-12 flex w-2/3">
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: -15 }}
@@ -62,9 +62,9 @@ const SignUp = () => {
       </div>
       <form
         action="POST"
-        className="bg-white px-12 py-16 rounded-md w-1/3 w-1/3 flex flex-col items-end"
+        className="flex w-1/3 flex-col items-end rounded-md bg-white px-12 py-16"
       >
-        <div className="w-full flex items-center justify-around mb-4">
+        <div className="mb-4 flex w-full items-center justify-around">
           <div className="mr-2">
             <label htmlFor="">Email</label>
             <Input type="email" placeholder="email" className="w-56" />
@@ -76,7 +76,7 @@ const SignUp = () => {
         </div>
         <button
           type="submit"
-          className="w-full h-14 bg-[#88D498] rounded-md font-bold text-white transition ease-in-out delay-150 hover:text-[#F3E9D2] hover:bg-[#1A936F]"
+          className="h-14 w-full rounded-md bg-[#88D498] font-bold text-white transition delay-150 ease-in-out hover:bg-[#1A936F] hover:text-[#F3E9D2]"
         >
           Sign Up
         </button>
