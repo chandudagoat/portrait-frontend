@@ -1,10 +1,10 @@
 "use client";
+import github from "@/app/github.png";
+import twitter from "@/app/twitter.png";
+import youtube from "@/app/youtube.png";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import twitter from "@/app/twitter.png";
-import youtube from "@/app/youtube.png";
-import github from "@/app/github.png";
 
 const SignUp = () => {
   return (
